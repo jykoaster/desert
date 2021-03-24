@@ -1,0 +1,124 @@
+$weightcolor: #3f5d45;
+$midcolor: #8da291;
+$lightcolor: #eaf0ed;
+$btncolor: #ffe180;
+$weightborder: 1px solid $weightcolor;
+$lightborder: 1px solid $lightcolor;
+$title-font: 40px;
+$subtitle-font: 24px;
+$header-font: 20px;
+$content-font: 16px;
+@media (min-width: 1900px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
+.addcart {
+  color: $weightcolor;
+  background-color: $lightcolor;
+  border: $lightborder;
+  .v-card__text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &:hover {
+    color: $lightcolor;
+    background-color: $weightcolor;
+    cursor: pointer;
+  }
+}
+.classlist {
+  &:hover {
+    background-color: $lightcolor;
+  }
+  &:before {
+    background-color: $weightcolor;
+    color: $lightcolor;
+  }
+}
+.weight-bolder {
+  border: $weightborder;
+}
+.light-border {
+  border: $lightborder !important;
+}
+.title-word {
+  font-size: $title-font;
+  font-weight: bold;
+  color: $lightcolor;
+}
+.stepper {
+  width: 250px;
+}
+.lightbgcolor {
+  background-color: $lightcolor;
+}
+.weightbgcolor {
+  background-color: $weightcolor;
+}
+.header-word {
+  font-size: $header-font;
+  margin-bottom: 0px !important;
+}
+.subtitle-word {
+  font-size: $subtitle-font;
+  margin-bottom: 0px !important;
+}
+.content-word {
+  font-size: $content-font;
+  margin-bottom: 0px !important;
+}
+.bfont {
+  font-weight: bold !important;
+}
+.weight-title-word {
+  @extend .title-word;
+  color: $weightcolor;
+}
+.light-subtitle-word {
+  @extend .subtitle-word;
+  color: $lightcolor;
+}
+.mid-subtitle-word {
+  @extend .subtitle-word;
+  color: $midcolor;
+}
+.weight-subtitle-word {
+  @extend .subtitle-word;
+  color: $weightcolor;
+}
+.light-header-word {
+  @extend .header-word;
+  color: $lightcolor;
+}
+.medium-header-word {
+  @extend .header-word;
+  color: $midcolor;
+}
+.weight-header-word {
+  @extend .header-word;
+  color: $weightcolor !important;
+}
+.weight-content-word {
+  @extend .content-word;
+  color: $weightcolor;
+}
+.mid-content-word {
+  @extend .content-word;
+  color: $midcolor;
+}
+.light-content-word {
+  @extend .content-word;
+  color: $lightcolor;
+}
+.checkbtn {
+  background-color: $btncolor;
+  color: $weightcolor !important;
+  font-size: $subtitle-font !important;
+  font-weight: bold !important;
+}
+.checkblock {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}

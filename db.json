@@ -1,0 +1,60 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "焦糖瑪卡龍",
+      "price": "200",
+      "src": "heather-schwartz-493946-unsplash",
+      "class": "本日精選",
+      "classid": 1
+    },
+    {
+      "id": 2,
+      "name": "焦糖瑪卡龍2",
+      "price": "150",
+      "src": "food-photographer-jennifer-pallian-650641-unsplash",
+      "class": "本日精選",
+      "classid": 1
+    },
+    {
+      "id": 3,
+      "name": "焦糖瑪卡龍3",
+      "price": "130",
+      "src": "rezel-apacionado-362238-unsplash",
+      "class": "本日精選",
+      "classid": 1
+    },
+    {
+      "id": 4,
+      "name": "焦糖瑪卡龍4",
+      "price": "130",
+      "src": "rezel-apacionado-362238-unsplash",
+      "class": "人氣推薦",
+      "classid": 2
+    },
+    {
+      "id": 5,
+      "name": "焦糖瑪卡龍5",
+      "price": "130",
+      "src": "rezel-apacionado-362238-unsplash",
+      "class": "人氣推薦",
+      "classid": 2
+    },
+    {
+      "id": 7,
+      "name": "焦糖瑪卡龍6",
+      "price": "130",
+      "src": "food-photographer-jennifer-pallian-650641-unsplash",
+      "class": "人氣推薦",
+      "classid": 2
+    },
+    {
+      "id": 7,
+      "name": "焦糖瑪卡龍5",
+      "price": "130",
+      "src": "food-photographer-jennifer-pallian-650641-unsplash",
+      "class": "新品上市",
+      "classid": 3
+    }
+  ]
+}

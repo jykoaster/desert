@@ -1,14 +1,14 @@
 <template>
   <v-container id="productpage" class="pt-0">
-    <v-row justify="center" class="productbanner pa-3">
+    <v-row justify="center" class="productbanner pa-3 mb-1">
       <v-img
         :src="require('~/assets/photo-1512484457149-266d165a4eca.jpg')"
         max-width="100%"
         max-height="500"
       ></v-img>
     </v-row>
-    <v-row justify="space-between">
-      <v-col cols="3" class="listoption">
+    <v-row justify="center" justify-md="space-between">
+      <v-col cols="12" md="3" class="listoption">
         <v-list-item class="listheader">
           <v-list-item-content class="pt-4 pb-4">
             <v-list-item-title>甜點類別</v-list-item-title>
@@ -25,15 +25,16 @@
           </v-list-item-content>
         </v-list-item>
       </v-col>
-      <v-col cols="9" class="productlist">
-        <v-row justify="space-between">
+      <v-col cols="12" md="9">
+        <v-row justify="center" justify-md="space-between">
           <v-col
             v-for="(v, i) in products"
             :key="i"
-            class="mb-5 d-flex justify-end"
-            cols="6"
+            class="mb-5 d-flex justify-center justify-md-end"
+            cols="12"
+            md="6"
           >
-            <v-card class="ma-0" max-width="300" outlined tile>
+            <v-card class="ma-0" width="300" outlined tile>
               <v-img
                 class="justify-end"
                 :src="require(`~/assets/${v.src}.jpg`)"

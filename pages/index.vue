@@ -1,7 +1,7 @@
 <template>
   <v-main id="homepage">
-    <v-container>
-      <v-row justify="center" class="mr-0">
+    <v-container class="pa-0">
+      <v-row justify="center" class="ma-0">
         <v-img
           :src="require('~/assets/annie-spratt-133872-unsplash.jpg')"
           max-height="500"
@@ -10,12 +10,18 @@
         >
         </v-img>
       </v-row>
-      <v-row id="area1" justify="center" class="mr-0">
-        <v-col v-for="(v, i) in cards" :key="i" cols="3" class="pa-0">
+      <v-row id="area1" justify="center" class="ma-0">
+        <v-col
+          v-for="(v, i) in cards"
+          :key="i"
+          cols="4"
+          md="3"
+          class="pa-0 tag-header text-center"
+        >
           <v-hover>
             <template #default="{ hover }">
               <v-card class="weight-bolder" :to="`${v.path}`" tile>
-                <v-img :src="require(`~/assets/${v.src}.jpg`)" height="250">
+                <v-img :src="require(`~/assets/${v.src}.jpg`)" :height="height">
                 </v-img>
                 <v-overlay
                   v-show="!hover"
@@ -39,13 +45,13 @@
         </v-col>
       </v-row>
     </v-container>
-    <div id="area2">
+    <!-- area2 pc -->
+    <div id="area2" class="d-none d-md-flex">
       <v-container>
-        <v-row justify="space-between" class="mr-0">
+        <v-row justify="space-between" class="ma-0">
           <v-col cols="5" class="align-center">
             <v-img
-              width="450"
-              height="450"
+              max-height="450"
               :src="require('~/assets/le-buzz-576478-unsplash.jpg')"
             ></v-img>
           </v-col>
@@ -58,28 +64,51 @@
               是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
             </p>
           </v-col>
-          <v-col cols="2" class="d-flex justify-end">
-            <v-img
-              :src="require('~/assets/lg-為什麼選擇了做甜點.svg')"
-              max-width="89"
-              min-width="60"
-              max-height="307"
-            ></v-img
-          ></v-col>
+          <v-img
+            :src="require('~/assets/lg-為什麼選擇了做甜點.svg')"
+            max-width="89"
+            class="ma-auto"
+          ></v-img>
         </v-row>
+        <div></div>
       </v-container>
     </div>
-    <div id="area3">
+    <!-- area2 pc end -->
+    <!-- area2 mobile -->
+    <div class="mt-5 d-block d-md-none">
+      <v-row justify="center" class="pa-5 ma-0 d-flex">
+        <v-img
+          max-width="280"
+          :src="require('~/assets/sm-為什麼選擇了做甜點.svg')"
+        ></v-img>
+      </v-row>
+      <v-row class="ma-0">
+        <v-img
+          max-width="100%"
+          max-height="250"
+          :src="require('~/assets/le-buzz-576478-unsplash.jpg')"
+        ></v-img>
+      </v-row>
+      <v-row class="pa-5 lightbgcolor ma-0 mid-content-word">
+        <p>
+          青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
+        </p>
+        <br />
+        <p>
+          是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
+        </p>
+      </v-row>
+    </div>
+    <!-- area2 mobile end-->
+    <!-- area3 pc -->
+    <div id="area3" class="d-none d-md-flex">
       <v-container>
-        <v-row justify="space-between" class="mr-0">
-          <v-col cols="2">
-            <v-img
-              :src="require('~/assets/lg-為什麼一定要吃甜點.svg')"
-              max-width="89"
-              min-width="60"
-              max-height="307"
-            ></v-img
-          ></v-col>
+        <v-row justify="space-between" class="ma-0">
+          <v-img
+            :src="require('~/assets/lg-為什麼一定要吃甜點.svg')"
+            max-width="89"
+            class="ma-auto"
+          ></v-img>
           <v-col cols="5" class="d-flex article-content text-center">
             <p>
               青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
@@ -89,30 +118,61 @@
               是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
             </p>
           </v-col>
-          <v-col cols="5" class="d-flex align-center justify-end">
+          <v-col cols="5" class="align-center">
             <v-img
-              width="450"
-              height="450"
+              max-height="450"
               :src="require('~/assets/monika-grabkowska-325047-unsplash.jpg')"
             ></v-img>
           </v-col>
         </v-row>
       </v-container>
     </div>
+    <!-- area3 pc  end-->
+    <!-- area3 mobile -->
+    <div class="mt-5 d-block d-md-none">
+      <v-row justify="center" class="pa-5 ma-0 d-flex">
+        <v-img
+          max-width="280"
+          :src="require('~/assets/sm-為什麼一定要吃甜點.svg')"
+        ></v-img>
+      </v-row>
+      <v-row class="ma-0">
+        <v-img
+          max-width="100%"
+          max-height="250"
+          :src="require('~/assets/monika-grabkowska-325047-unsplash.jpg')"
+        ></v-img>
+      </v-row>
+      <v-row class="pa-5 lightbgcolor ma-0 mid-content-word">
+        <p>
+          青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
+        </p>
+        <br />
+        <p>
+          是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
+        </p>
+      </v-row>
+    </div>
+    <!-- area3 mobile end-->
+    <!-- area4 pc -->
     <div id="area4">
       <v-container>
-        <v-row justify="center" class="mr-0 mb-5">
-          <v-col cols="2">
-            <v-img
-              :src="require('~/assets/lg-想吃甜點是不需要理由的.svg')"
-              width="89"
-              height="335"
-              class="ma-auto"
-            ></v-img>
-          </v-col>
+        <v-row justify="center" class="ma-0 mb-5">
+          <v-img
+            :src="require('~/assets/lg-想吃甜點是不需要理由的.svg')"
+            max-width="89"
+            class="ma-auto d-none d-md-flex"
+          ></v-img>
+          <v-img
+            :src="require('~/assets/sm-想吃甜點是不需要理由的.svg')"
+            max-width="280"
+            class="ma-auto d-dlex d-md-none"
+          ></v-img>
         </v-row>
       </v-container>
     </div>
+    <!-- area4 pc end-->
+
     <v-container id="area5">
       <v-row class="ma-5 d-flex justify-md-space-between justify-center">
         <v-col
@@ -176,11 +236,24 @@ export default {
     ],
     area5: [],
   }),
+  computed: {
+    height() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 200;
+        case "sm":
+          return 200;
+        default:
+          return 250;
+      }
+    },
+  },
   async mounted() {
     this.area5 = await this.$store.dispatch("product/getitemsbyclass", {
       classid: "1",
     });
   },
+
   methods: {
     addcart(item) {
       const param = {
@@ -203,14 +276,18 @@ export default {
 
 .article-content {
   p {
-    margin: 2em 2em 2em 2em;
+    @extend .mid-content-word;
+    margin: 2em 2em 2em 2em !important;
     line-height: 32px;
     writing-mode: vertical-lr;
   }
 }
 
 #area1 {
-  .col {
+  .tag-header {
+    @include mobile {
+      margin-top: 0px;
+    }
     margin-top: -80px;
     z-index: 2;
   }

@@ -1,9 +1,68 @@
 <template>
   <v-app>
+    <!-- navigation -->
+    <v-navigation-drawer id="nav-drawer" v-model="drawer" app temporary>
+      <v-list>
+        <v-list-item>
+          <v-img
+            :src="require('~/assets/logo-all-dark.svg')"
+            max-height="40"
+            max-width="150"
+          ></v-img>
+        </v-list-item>
+        <v-list-item to="/">
+          <v-list-item-icon>
+            <v-icon class="weight-header-word">mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="weight-header-word"
+              >首頁</v-list-item-title
+            >
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/product/all">
+          <v-list-item-icon>
+            <v-icon class="weight-header-word">mdi-shopping</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="weight-header-word"
+              >甜點</v-list-item-title
+            >
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/login">
+          <v-list-item-icon>
+            <v-icon class="weight-header-word">mdi-login</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="weight-header-word"
+              >登入</v-list-item-title
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <!-- navigation end-->
+
     <div id="navwrap">
       <div id="nav">
         <v-container>
-          <v-row justify="center" align="center">
+          <!-- mobile nav -->
+          <div class="d-flex d-md-none">
+            <v-row class="d-flex d-md-none pa-5" justify="space-between">
+              <v-app-bar-nav-icon
+                color="#3f5d45"
+                @click="drawer = !drawer"
+              ></v-app-bar-nav-icon>
+
+              <v-btn text to="/cart" nuxt
+                ><v-icon color="#3f5d45">mdi-cart</v-icon></v-btn
+              >
+            </v-row>
+          </div>
+          <!-- mobile nav -->
+          <!-- pc nav -->
+          <v-row class="d-none d-md-flex" justify="center" align="center">
             <v-col
               ><v-img
                 :src="require('~/assets/logo-all-dark.svg')"
@@ -18,9 +77,11 @@
               <v-btn text to="/cart" nuxt><v-icon>mdi-cart</v-icon></v-btn>
             </v-col>
           </v-row>
+          <!-- pc nav end-->
         </v-container>
       </div>
     </div>
+
     <v-main>
       <nuxt />
     </v-main>
@@ -109,20 +170,20 @@
 <script>
 export default {
   middleware: ["redirect"],
+  data: () => ({
+    drawer: false,
+  }),
+  computed: {
+    // logowidth(){
+    //   if(this.$vuetify.breakpoint.name=="sm")
+    // }
+  },
 };
 </script>
 <style lang="scss" scoped>
-#navwrap {
-  height: 100px;
+#nav-drawer {
+  z-index: 99;
 }
-#nav {
-  background-color: #fff;
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-}
-
 .navbtns {
   height: 100px;
   .v-btn {

@@ -13,6 +13,27 @@ $content-font: 16px;
     max-width: 1200px !important;
   }
 }
+@mixin mobile {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+#navwrap {
+  @include mobile {
+    height: 80px;
+  }
+  height: 100px;
+}
+#nav {
+  @include mobile {
+    height: 80px;
+  }
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
 .addcart {
   color: $weightcolor;
   background-color: $lightcolor;

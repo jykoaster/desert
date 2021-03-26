@@ -1,7 +1,8 @@
 <template>
   <v-container id="cartpage">
-    <v-row justify="space-between">
-      <v-col cols="7" class="pa-5">
+    <v-row justify="center" justify-md="space-between">
+      <!-- pc -->
+      <v-col cols="7" class="d-none d-md-block pa-5">
         <div class="weight-subtitle-word bfont lightbgcolor pa-5 text-center">
           您的購物車
         </div>
@@ -32,7 +33,54 @@
           <v-icon @click="remove(v)">mdi-delete</v-icon>
         </div>
       </v-col>
-      <v-col cols="4" class="text-center pa-5">
+      <!-- pc end -->
+      <!-- mobile -->
+      <v-col cols="12" sm="10" class="d-block d-md-none pa-1">
+        <div class="weight-subtitle-word bfont lightbgcolor pa-5 text-center">
+          您的購物車
+        </div>
+        <div
+          v-for="(v, i) in items"
+          :key="i"
+          class="mt-5 pb-2 align-center text-center justify-space-between itemdetail"
+        >
+          <v-row
+            justify="space-between"
+            align="center"
+            class="ma-0 pb-2 itemdetail"
+          >
+            <v-img
+              :src="require(`~/assets/${v.src}.jpg`)"
+              height="100"
+              max-width="180"
+            ></v-img>
+            <div class="text-left weight-content-word">
+              <p class="mb-0">{{ v.name }}</p>
+              <p class="mb-0">NT$ {{ v.price }}</p>
+            </div>
+          </v-row>
+          <v-row justify="space-between" align="center" class="ma-0 pt-2">
+            <div class="d-flex">
+              <v-btn text outlined tile small height="50" @click="increase(v)"
+                >-</v-btn
+              >
+              <input
+                type="text"
+                :value="v.count"
+                class="text-center"
+                disabled
+              />
+              <v-btn text outlined tile small height="50" @click="crease(v)"
+                >+</v-btn
+              >
+            </div>
+            <p class="mb-0 weight-header-word">NT$ {{ v.price * v.count }}</p>
+            <v-icon @click="remove(v)">mdi-delete</v-icon>
+          </v-row>
+        </div>
+      </v-col>
+      <!-- mobile end-->
+      <v-col cols="12" sm="10" md="4" class="text-center pa-5">
         <div class="pa-5 weightbgcolor light-content-word mr-0">
           <p class="light-subtitle-word">訂單摘要</p>
           <hr />

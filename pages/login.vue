@@ -60,6 +60,7 @@
     </v-row>
   </v-container>
 </template>
+
 <style lang="scss" scoped>
 #loginpage {
   margin-bottom: 80px;
